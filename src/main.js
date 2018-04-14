@@ -48,3 +48,17 @@ map.on('click', 'collisions', function (e) {
   document.getElementById('infoLightCondition').innerHTML = lightConditions[props.lightCondition];
   document.getElementById('infoWeather').innerHTML = weathers[props.weather];
 });
+
+slider.oninput = function() {
+  console.log(this.value)
+  var label = document.getElementById('label');
+  var month = parseInt(this.value);
+  if (month == 0) {
+    map.setFilter('collisions', undefined);
+    label.innerText = labels[0];
+    return;
+  }
+  var filters = ['==', 'month', month];
+  label.innerText = labels[month];
+  map.setFilter('collisions', filters);
+}
