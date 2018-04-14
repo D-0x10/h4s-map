@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>H4S Map</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div id='map'></div>
+  <div id='console'>
+    <h1>Vägtrafikolyckors</h1>
+    <div class='session'>
+      <h2>Svårighetsgrad</h2>
+      <ul class='intensity'>
+        <li><span class="color color-0"></span><span class="label">Okänd svårhetsgrad</span></li>
+        <li><span class="color color-1"></span><span class="label">Ej personskadeolycka</span></li>
+        <li><span class="color color-2"></span><span class="label">Lindrig olycka</span></li>
+        <li><span class="color color-3"></span><span class="label">Svår olycka</span></li>
+        <li><span class="color color-4"></span><span class="label">Dödsolycka</span></li>
+      </ul>
+    </div>
+    <p>Data: <a href='https://tsopendata.portal.azure-api.net/docs/services/5a65cf5a5c8085d57c10f8fc/operations/5a65cf60affd2e296c9cb264'>Transportstyrelsen</a></p>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
