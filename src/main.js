@@ -37,3 +37,13 @@ map.on('load', function() {
     }
   }, 'admin-2-boundaries-dispute');
 });
+
+map.on('click', 'collisions', function (e) {
+  var props = e.features[0].properties;
+  document.getElementById('infoType').innerHTML = props.accidentType;
+  document.getElementById('infoInvlovedCount').innerHTML = props.involvedSize;
+  document.getElementById('infoLightCondition').innerHTML = props.lightCondition;
+  document.getElementById('infoRoadCondition').innerHTML = props.roadCondition;
+  document.getElementById('infoLightCondition').innerHTML = props.lightCondition;
+  document.getElementById('infoWeather').innerHTML = props.weather;
+});

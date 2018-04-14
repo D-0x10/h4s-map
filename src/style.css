@@ -31,12 +31,32 @@ a:hover {
   text-decoration: underline;
 }
 
-#console {
+dt {
+  font-weight: bold;
+}
+
+dd {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+#console, #info {
   position: absolute;
   width: 240px;
   margin: 10px;
   padding: 10px 20px;
   background-color: white;
+  top: 0;
+}
+
+#console {
+  left: 0;
+}
+
+#info {
+  right: 0;
 }
 
 .session {
