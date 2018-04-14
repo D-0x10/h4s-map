@@ -7,13 +7,21 @@ var map = new mapboxgl.Map({
   zoom: 3
 });
 
+var year = 2017;
+if (window.location.hash) {
+  year = parseInt(window.location.hash.substr(1));
+  if (year === NaN) {
+    year = 2017;
+  }
+}
+
 map.on('load', function() {
   map.addLayer({
     id: 'collisions',
     type: 'circle',
     source: {
       type: 'geojson',
-      data: 'https://h4s-api.herokuapp.com/api/accidents/2017'
+      data: 'https://h4s-api.herokuapp.com/api/accidents/' + year,
     },
     paint: {
       'circle-radius': [
