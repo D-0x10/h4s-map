@@ -55,17 +55,23 @@ map.on('click', 'collisions', function (e) {
   function p(key) {
     return info[props.name][key];
   }
-  document.getElementById('infoType').innerHTML = accidentTypes[p('accidentType')];
+  document.getElementById('infoId').innerHTML = props.name;
+  document.getElementById('infoType').innerHTML = p('accidentType');
   document.getElementById('infoInvlovedCount').innerHTML = props.inv;
   document.getElementById('infoLightCondition').innerHTML = p('lightCondition');
   document.getElementById('infoLocationType').innerHTML = locationTypes[p('locationType')];
   document.getElementById('infoRoadCondition').innerHTML = p('roadCondition');
   document.getElementById('infoLightCondition').innerHTML = lightConditions[p('lightCondition')];
   document.getElementById('infoWeather').innerHTML = weathers[p('weather')];
+  var involvedString = '';
+  var involved = p('involved');
+  for (key in involved) {
+    involvedString += involved[key] + '<br>'
+  }
+  document.getElementById('infoInvloved').innerHTML = involvedString;
 });
 
 slider.oninput = function() {
-  console.log(this.value)
   var label = document.getElementById('label');
   var month = parseInt(this.value);
   if (month == 0) {

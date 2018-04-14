@@ -7,39 +7,6 @@ var weathers = {
   5: 'Okänt'
 };
 
-var accidentTypes = {
-  0: 'Avsvängande motorfordon',
-  1: 'Cykel/moped-motorfordon',
-  2: 'Fotgängare-motorfordon',
-  3: 'Fotgängare singel',
-  4: 'Cykel singel',
-  5: 'Moped singel',
-  6: 'Fotgängare-cyklist',
-  7: 'Cykel-cykel',
-  8: 'Cykel-moped',
-  9: 'Moped-fotgängare',
-  10: 'Moped-moped',
-  11: 'Fotgängare-fotgängare',
-  12: 'Spårvagn',
-  13: 'Tåg',
-  14: 'Tåg/spårvagn övrigt',
-  15: 'Korsande-motorfordon',
-  16: 'Möte-motorfordon',
-  17: 'Omkörning-motorfordon',
-  18: 'Singel-motorfordon',
-  19: 'Upphinnande-motorfordon',
-  20: 'Övrigt',
-  21: 'Djur, häst/annat tamdjur',
-  22: 'Rådjur/hjort',
-  23: 'Älg',
-  24: 'Ren',
-  25: 'Traktor/snöskoter/terränghjuling/motorredskap',
-  26: 'Annat vilt',
-  27: 'Parkerat fordon',
-  28: 'Vildsvin',
-  29: 'Backning/vändning/u-sväng',
-};
-
 var intensities = {
   4: 'Dödsolycka',
   3: 'Svår olycka',
