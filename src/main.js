@@ -3,7 +3,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWFyY3VzcmV0dGlnIiwiYSI6ImNqZnozMTVkdDJlbTUyd
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/light-v9',
-  center: [18.0686, 59.3293], // initial map center in [lon, lat]
+  center: [18.0686, 59.3293],
   zoom: 3
 });
 
@@ -13,7 +13,7 @@ map.on('load', function() {
     type: 'circle',
     source: {
       type: 'geojson',
-      data: 'https://h4s-api.herokuapp.com/api/acc'
+      data: 'https://h4s-api.herokuapp.com/api/accidents/2017'
     },
     paint: {
       'circle-radius': [
@@ -40,10 +40,11 @@ map.on('load', function() {
 
 map.on('click', 'collisions', function (e) {
   var props = e.features[0].properties;
-  document.getElementById('infoType').innerHTML = props.accidentType;
+  document.getElementById('infoType').innerHTML = accidentTypes[props.accidentType];
   document.getElementById('infoInvlovedCount').innerHTML = props.involvedSize;
   document.getElementById('infoLightCondition').innerHTML = props.lightCondition;
+  document.getElementById('infoLocationType').innerHTML = locationTypes[props.locationType];
   document.getElementById('infoRoadCondition').innerHTML = props.roadCondition;
-  document.getElementById('infoLightCondition').innerHTML = props.lightCondition;
-  document.getElementById('infoWeather').innerHTML = props.weather;
+  document.getElementById('infoLightCondition').innerHTML = lightConditions[props.lightCondition];
+  document.getElementById('infoWeather').innerHTML = weathers[props.weather];
 });
