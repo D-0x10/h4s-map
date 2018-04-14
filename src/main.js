@@ -15,6 +15,8 @@ if (window.location.hash) {
   }
 }
 
+document.getElementById('year').innerHTML = year.toString();
+
 var info = {};
 
 map.on('load', function() {
