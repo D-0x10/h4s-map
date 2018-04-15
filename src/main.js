@@ -3,8 +3,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibWFyY3VzcmV0dGlnIiwiYSI6ImNqZnozMTVkdDJlbTUyd
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/mapbox/light-v9',
-  center: [18.0686, 59.3293],
-  zoom: 3
+  center: [17.3069, 62.8],
+  zoom: 4
 });
 
 var year = 2017;
