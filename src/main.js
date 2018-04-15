@@ -71,17 +71,34 @@ map.on('click', 'collisions', function (e) {
   document.getElementById('infoInvloved').innerHTML = involvedString;
 });
 
+var monthFilter = null;
+var eventFilter = null;
+
+function updateFilters() {
+  if (monthFilter === null && eventFilter === null) {
+    map.setFilter('collisions', undefined);
+  }
+  var filters = ['all'];
+  if (monthFilter !== null) {
+    filters.push(monthFilter);
+  }
+  if (eventFilter !== null) {
+    filters.push(eventFilter);
+  }
+  map.setFilter('collisions', filters);
+}
+
 slider.oninput = function() {
   var label = document.getElementById('label');
   var month = parseInt(this.value);
   if (month == 0) {
-    map.setFilter('collisions', undefined);
+    monthFilter = null;
     label.innerText = labels[0];
-    return;
+  } else {
+    monthFilter = ['==', 'month', month];
+    label.innerText = labels[month];
   }
-  var filters = ['==', 'month', month];
-  label.innerText = labels[month];
-  map.setFilter('collisions', filters);
+  updateFilters();
 }
 
 function httpGet(theUrl, callback)
@@ -101,10 +118,9 @@ httpGet('https://h4s-api.herokuapp.com/api/accidents/info/' + year, function(res
 
 function selectEvent(val) {
   if (val == "all") {
-    map.setFilter('collisions', undefined);
-    return;
+    eventFilter = null;
+  } else {
+    eventFilter = ['==', 'accidentType', accidentTypes[parseInt(val)]];
   }
-  var filters = ['==', 'accidentType', accidentTypes[parseInt(val)]];
-  console.log(filters)
-  map.setFilter('collisions', filters);
+  updateFilters();
 }
