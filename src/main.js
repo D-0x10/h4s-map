@@ -15,6 +15,39 @@ if (window.location.hash) {
   }
 }
 
+var accidentTypes = [
+  "A (avsvängande motorfordon)",
+  "C (cykel/moped-motorfordon)",
+  "F (fotgängare-motorfordon)",
+  "G0 (fotgängare singel)",
+  "G1 (cykel singel)",
+  "G2 (moped singel)",
+  "G3 (fotgängare-cyklist)",
+  "G4 (cykel-cykel)",
+  "G5 (cykel-moped)",
+  "G6 (moped-fotgängare)",
+  "G7 (moped-moped)",
+  "G8 (fotgängare-fotgängare)",
+  "J (spårvagn)",
+  "J (tåg)",
+  "J (tåg/spårvagn övrigt)",
+  "K (korsande-motorfordon)",
+  "M (möte-motorfordon)",
+  "O (omkörning-motorfordon)",
+  "S (singel-motorfordon)",
+  "U (upphinnande-motorfordon)",
+  "V0 (övrigt)",
+  "V1 (djur, häst/annat tamdjur)",
+  "W1 (rådjur/hjort)",
+  "W2 (älg)",
+  "W3 (ren)",
+  "V3 (traktor/snöskoter/terränghjuling/motorredskap)",
+  "W4 (annat vilt)",
+  "V5 (parkerat fordon)",
+  "W5 (vildsvin)",
+  "V6 (backning/vändning/u-sväng)",
+]
+
 document.getElementById('year').innerHTML = year.toString();
 
 var info = {};
@@ -98,3 +131,13 @@ function httpGet(theUrl, callback)
 httpGet('https://h4s-api.herokuapp.com/api/accidents/info/' + year, function(result) {
   info = JSON.parse(result);
 });
+
+function selectEvent(val) {
+  if (val == "all") {
+    map.setFilter('collisions', undefined);
+    return;
+  }
+  var filters = ['==', 'accidentType', accidentTypes[parseInt(val)]];
+  console.log(filters)
+  map.setFilter('collisions', filters);
+}

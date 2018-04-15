@@ -22,8 +22,43 @@
         <li><span class="color color-4"></span><span class="label">Dödsolycka</span></li>
       </ul>
     </div>
+    <h2>Månad</h2>
     <input id='slider' class='slider' type='range' min='0' max='12' step='1' value='0'/>
     <div id="label" style="text-align: center; font-weight: bold;">Alla månader</div>
+   <h2>Olyckstyp</h2>
+    <select style="width: 100%" onchange="selectEvent(this.value)">
+      <option value="all" selected>Alla</option> 
+      <option value="0">A (avsvängande motorfordon)</option>
+      <option value="1">C (cykel/moped-motorfordon)</option>
+      <option value="2">F (fotgängare-motorfordon)</option>
+      <option value="3">G0 (fotgängare singel)</option>
+      <option value="4">G1 (cykel singel)</option>
+      <option value="5">G2 (moped singel)</option>
+      <option value="6">G3 (fotgängare-cyklist)</option>
+      <option value="7">G4 (cykel-cykel)</option>
+      <option value="8">G5 (cykel-moped)</option>
+      <option value="9">G6 (moped-fotgängare)</option>
+      <option value="10">G7 (moped-moped)</option>
+      <option value="11">G8 (fotgängare-fotgängare)</option>
+      <option value="12">J (spårvagn)</option>
+      <option value="13">J (tåg)</option>
+      <option value="14">J (tåg/spårvagn övrigt)</option>
+      <option value="15">K (korsande-motorfordon)</option>
+      <option value="16">M (möte-motorfordon)</option>
+      <option value="17">O (omkörning-motorfordon)</option>
+      <option value="18">S (singel-motorfordon)</option>
+      <option value="19">U (upphinnande-motorfordon)</option>
+      <option value="20">V0 (övrigt)</option>
+      <option value="21">V1 (djur, häst/annat tamdjur)</option>
+      <option value="22">W1 (rådjur/hjort)</option>
+      <option value="23">W2 (älg)</option>
+      <option value="24">W3 (ren)</option>
+      <option value="25">V3 (traktor/snöskoter/terränghjuling/motorredskap)</option>
+      <option value="26">W4 (annat vilt)</option>
+      <option value="27">V5 (parkerat fordon)</option>
+      <option value="28">W5 (vildsvin)</option>
+      <option value="29">V6 (backning/vändning/u-sväng</option>
+    </select>
     <p>Data: <a href='https://tsopendata.portal.azure-api.net/docs/services/5a65cf5a5c8085d57c10f8fc/operations/5a65cf60affd2e296c9cb264'>Transportstyrelsen</a></p>
   </div>
   <div id='info'>
