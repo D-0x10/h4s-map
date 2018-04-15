@@ -14,6 +14,8 @@ All of these questions, and many more, can be answered by this accident map.
 
 [The map for 2003](http://h4s-map.surge.sh/#2003)
 
+`http://h4s-map.surge.sh/#{year}`
+
 ## Background
 
 This was made during 24 hours at the hackathon [Hack4Sweden 2018](https://hackforsweden.se).
